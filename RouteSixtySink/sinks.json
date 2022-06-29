@@ -1,0 +1,285 @@
+{
+    "sinks": [{
+            "sink": "Newtonsoft.Json.JsonConvert::DeserializeObject",
+            "category": "Newtonsoft Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "fastJSON.JSON.Instance::ToObject",
+            "category": "FastJSON Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "binarySerializer.UnPickle",
+            "category": "FsPickler Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "System.Web.Script.Serialization.JavaScriptSerializer::Deserialize",
+            "category": "JavascriptSerializer Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "ObjectStateFormatter",
+            "category": "ObjectStateFormatter Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "FsPickler",
+            "category": "FsPickler Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "BinaryFormatter::Deserialize",
+            "category": "Binary Formatter Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "LosFormatter",
+            "category": "LosFormatter Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "CreateJsonSerializer",
+            "category": "CreateJsonSerializer Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "NetDataContractSerializer",
+            "category": "NetDataContractSerializer Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "DataContractSerializer",
+            "category": "DataContractSerializer Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "System.Xml.Serialization.XmlSerializer::Deserialize",
+            "category": "XmlSerializer Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "SoapFormatter",
+            "category": "SoapFormatter Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "Sweet.Jayson",
+            "category": "Sweet.Jayson Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "Jayson",
+            "category": "SoapFormatter Object Deserialization",
+            "score": "1"
+        },
+        {
+            "sink": "System.Web.HttpPostedFile::SaveAs",
+            "category": "File upload saved to web server",
+            "score": "3"
+        },
+        {
+            "sink": "System.Diagnostics.Process::Start",
+            "category": "Potential command injection",
+            "score": "2"
+        },
+        {
+            "sink": "System.Web.HttpResponse::WriteFile",
+            "category": "Files read from disk",
+            "score": "5"
+        },
+        {
+            "sink": "(SELECT|WHERE|UNION|DELETE) .*\\{\\d\\}",
+            "regex": "true",
+            "category": "Unparameterized SQL query, SQLi likely possible",
+            "score": "3"
+        },
+        {
+            "sink": "(SELECT|WHERE|UNION|DELETE) .*.*\\+",
+            "regex": "true",
+            "category": "Unparameterized SQL query, SQLi likely possible",
+            "score": "3"
+        },
+        {
+            "sink": "System.Net.WebRequest::Create",
+            "category": "Potential SSRF",
+            "score": "5"
+        },
+        {
+            "sink": "ICSharpCode.SharpZipLib.Zip.FastZip::.ctor(",
+            "category": "Potential Directory Traversal/Arbitrary File Write",
+            "score": "5"
+        },
+        {
+            "sink": "DataContractResolver",
+            "category": "Unsafe deserialization, RCE possible",
+            "score": "1"
+        },
+        {
+            "sink": "BinaryServerFormatterSinkProvider",
+            "category": "Unsafe deserialization, RCE possible",
+            "score": "1"
+        },
+        {
+            "sink": "System.Xml.XmlDocument::Load(",
+            "category": "Potential XXE",
+            "score": "3"
+        },
+        {
+            "sink": "RestClient",
+            "category": "Potential SSRF",
+            "score": "5"
+        },
+        {
+            "sink": "XslCompiledTransform",
+            "category": "Potential SSRF",
+            "score": "5",
+            "comment": "Non-static method, the actual sink occurs at Load() "
+        },
+        {
+            "sink": "SetPriviliege",
+            "category": "Dangerous Windows OS API Call (Escalation)",
+            "score": "5"
+        },
+        {
+            "sink": "AdjustTokenPrivilege",
+            "category": "Dangerous Windows OS API Call (Escalation)",
+            "score": "5",
+            "comment": "Dangerous Windows OS API Call (Escalation)"
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::CreateProcess",
+            "category": "Command Execution",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::CreateProcessAsUser",
+            "category": "Command Execution",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::CreateToolhelp32Snapshot",
+            "category": "Dangerous Windows OS API Call",
+            "score": "5",
+            "comment": "Create snapshot of process for use with other API functions"
+        },
+
+        {
+            "sink": "Microsoft.Win32.NativeMethods::DuplicateHandle",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::EnumProcesses",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::EnumProcessModules",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::EnumProcesses",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::GetModuleFileNameEx",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::GetWindowThreadProcessId",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::NtQueryInformationProcess",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::OpenProcess",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::OpenProcessToken",
+            "category": "Dangerous Windows OS API Call (Requires additional attack vector)",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::TerminateProcess",
+            "category": "Denial of Service",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Xml.Xsl.XsltSettings::.ctor",
+            "category": "XSLT",
+            "score": "5",
+            "comment": "Requires properties in constructor to be set to insecure values and additional attack vector"
+        },
+        {
+            "sink": "Microsoft.Win32.NativeMethods::EnumProcesses",
+            "category": "Dangerous Windows OS API Call",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Diagnostics.Process::GetProcessesByName",
+            "category": "Dangerous Windows OS API Call",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Diagnostics.Process::GetProcesses",
+            "category": "Dangerous Windows OS API Call",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Diagnostics.Process::GetProcessesById",
+            "category": "Dangerous Windows OS API Call",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Diagnostics.Process::GetProcessesByName",
+            "category": "Dangerous Windows OS API Call",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Net.WebClient::DownloadData",
+            "category": "SSRF",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Net.WebClient::DownloadFile",
+            "category": "SSRF",
+            "score": "5",
+            "comment": ""
+        },
+        {
+            "sink": "System.Net.WebClient::DownloadString",
+            "category": "SSRF",
+            "score": "5",
+            "comment": ""
+        }
+    ]
+}
