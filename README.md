@@ -6,6 +6,9 @@
 - Dillon Franke (@dillonfranke)
 - Michael Maturi (@a-marionette)
 
+# 📝 Blog 
+[https://www.mandiant.com/resources/route-sixty-sink-launch](https://www.mandiant.com/resources/route-sixty-sink-launch)
+
 # ⚓ Route Sixty-Sink
 ***Route Sixty-Sink*** is an open source tool that enables defenders and security researchers alike to quickly identify vulnerabilities in any .NET assembly using automated source-to-sink analysis.
 
